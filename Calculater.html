@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc00d27b50.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+    <div class="px-2 py-3 card m-auto mt-5"  style="width: 300px;">
+    <div class="input-group mb-3">
+        <input type="text" id="first-value" class="form-control" placeholder="Enter First Value" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    
+        <div class="d-flex justify-content-between">
+            <button class="px-2 mx-2" onclick="setone(1)">1</button>
+            <button class="px-2 mx-2" onclick="settwo(2)">2</button>
+            <button class="px-2 mx-2" onclick="setthree(3)">3</button> 
+            <button class="px-2 mx-2" onclick="remove()"><i class="fa-solid fa-delete-left"></i></button> 
+        </div>
+        <div class="d-flex mt-3 justify-content-between">
+            <button class="px-2 mx-2" onclick="setfour(4)">4</button>
+            <button class="px-2 mx-2" onclick="setfive(5)">5</button>
+            <button class="px-2 mx-2" onclick="setsix(6)">6</button>
+            <button class="px-2 mx-2" onclick="devision('/')">/</button> 
+
+        </div>
+        <div class="d-flex mt-3 justify-content-between">
+            <button class="px-2 mx-2" onclick="setseven(7)">7</button>
+            <button class="px-2 mx-2" onclick="seteight(8)">8</button>
+            <button class="px-2 mx-2" onclick="nine(9)">9</button>
+            <button class="px-2 mx-2" onclick="multiplication('*')">*</button>
+
+        </div>
+        <div class="d-flex mt-3 justify-content-between">
+            <button class="px-2 mx-2 " onclick="setzero(0)" style="height: 31px;" >0</button>
+            <button class="px-2 mx-2 " onclick="equal('=')" style="height: 31px;" >=</button>
+            <button class="px-2 mx-2" onclick="subtraction('-')" style="height: 31px;">-</button>
+            <button class="px-2 mx-2 " onclick="addition('+')" style="height: 50px;">+</button>
+        </div>
+</div>
+<script>
+ var first_value =  document.getElementById('first-value');
+    function remove(){
+        if (first_value.value.length > 0) {
+        var removeDigit = first_value.value.slice(0, -1);
+        first_value.value = removeDigit;
+    }
+    }
+    function setone(one){
+        first_value.value += one;
+    }
+    function settwo(two){
+        first_value.value += two;
+    }
+    function setthree(three){
+        first_value.value += three;
+    }
+    function setfour(four){
+        first_value.value += four;
+    }
+    function setfive(five){
+        first_value.value += five;
+    }
+    function setsix(six){
+        first_value.value += six;
+    } 
+    function setseven(seven){
+        first_value.value += seven;
+    }
+    function seteight(eight){
+        first_value.value += eight;
+    } 
+    function nine(nine){
+        first_value.value += nine;
+    }
+    function setzero(zero){
+        first_value.value += zero;
+    }
+    function devision(dev) {
+        var lastDigit = first_value.value.slice(-1);
+        if(lastDigit !== '/' &&  lastDigit !== '+'  &&  lastDigit !== '-' &&  lastDigit !== '*' ){
+            if(lastDigit.length > 0){
+        first_value.value += dev;
+       }
+        }
+}
+    function multiplication(mul){
+        var lastDigit = first_value.value.slice(-1);
+        if(lastDigit !== '*'  &&   lastDigit !== '/' &&  lastDigit !== '+'  &&  lastDigit !== '-'){
+       if(lastDigit.length > 0){
+        first_value.value += mul;
+       }
+        }
+    }
+    function subtraction(sub){
+        var lastDigit = first_value.value.slice(-1);
+        if(lastDigit !== '-' && lastDigit !== '*'  &&   lastDigit !== '/' &&  lastDigit !== '+'   ){
+            if(lastDigit.length > 0){
+        first_value.value += sub;
+       }
+        } 
+    }
+    function addition(add){
+        var lastDigit = first_value.value.slice(-1);
+        if(lastDigit !== '+' && lastDigit !== '*'  &&   lastDigit !== '/' &&  lastDigit !== '-'   ){
+            if(lastDigit.length > 0){
+        first_value.value += add;
+       }
+        } 
+    }
+    function equal() {
+            var result = eval(first_value.value);
+            first_value.value = result;
+    }
+</script>
+</body>
+</html>
