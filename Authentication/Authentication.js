@@ -20,7 +20,7 @@ function signUp() {
             userPassword.push(signUp_Password);
             localStorage.setItem('userEmail', JSON.stringify(userEmail));
             localStorage.setItem('userPassword', JSON.stringify(userPassword));
-            window.location.href = 'file:///D:/DG.SKill/course.html';
+            window.location.href = 'Discription.html';
         }
         document.getElementById('signup-FirstName').value = '';
         document.getElementById('signup-LastName').value = '';
@@ -37,11 +37,13 @@ function signIn(){
     var loginuserPassword = userPassword.indexOf(login_Password);
     if(userEmailIndex === -1 ){
         errorMessages.innerHTML = 'Your email is not registered. You will need to register.';
+        
     }
     else if(loginuserPassword === -1 ){
         errorMessages.innerHTML = 'Password is wrong'
     }
+
     else{
-       window.location.href = 'file:///D:/DG.SKill/course.html';
+       window.location.href = 'Discription.html';
     }
 }
