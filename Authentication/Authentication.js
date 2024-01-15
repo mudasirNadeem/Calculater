@@ -12,7 +12,7 @@ function signUp() {
     } else if (signUp_Password.length < 6) {
         errorMessage.innerHTML = 'Password must be greater than 6 characters';
     } else if (signUp_Email && signUp_Password) {
-        var userEmailIndex = userEmail.indexOf(signUp_Email);
+        // var userEmailIndex = userEmail.indexOf(signUp_Email);
         if (userEmail.includes(signUp_Email)) {
             errorMessage.innerHTML = 'Email already exists. Please use a different email or sign in.';
         } else {
@@ -30,6 +30,18 @@ function signUp() {
 }
 
 function signIn(){
-    var login_Email = document.getElementById('login-Email')
-    var login_Password = document.getElementById('login-Password')
+    var login_Email = document.getElementById('login-Email').value
+    var login_Password = document.getElementById('login-Password').value
+    var errorMessages = document.getElementById('errorMessages')
+    var userEmailIndex = userEmail.indexOf(login_Email );
+    var loginuserPassword = userPassword.indexOf(login_Password);
+    if(userEmailIndex === -1 ){
+        errorMessages.innerHTML = 'Your email is not registered. You will need to register.';
+    }
+    else if(loginuserPassword === -1 ){
+        errorMessages.innerHTML = 'Password is wrong'
+    }
+    else{
+       window.location.href = 'file:///D:/DG.SKill/course.html';
+    }
 }

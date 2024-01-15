@@ -8,8 +8,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open SignUp.html",
-            "file": "D:/Calculater/Authentication/SignUp.html?"
+            "name": "Open Login.html",
+            "file": "D:/Calculater/Authentication/Login.html?"
         }
     ]
 }
