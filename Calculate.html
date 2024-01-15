@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function int_sum(num) {
+    var s_sum = 0; 
+    while (num > 0) { // Loop until num is greater than 0
+        s_sum += num; // Add num to the sum
+        num = Math.floor(num / 2); // Divide num by 2 using floor division
+    }
+    return s_sum; // Return the sum of integers from 1 to num
+}
+
+// Examples to calculate the sum of integers from 1 to the given number
+document.write(int_sum(8) + '<br>');
+document.write(int_sum(9) + '<br>');  
+document.write(int_sum(26) + '<br>'); 
+    </script>
+</body>
+</html>
