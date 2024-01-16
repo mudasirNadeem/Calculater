@@ -12,7 +12,6 @@ function signUp() {
     } else if (signUp_Password.length < 6) {
         errorMessage.innerHTML = 'Password must be greater than 6 characters';
     } else if (signUp_Email && signUp_Password) {
-        // var userEmailIndex = userEmail.indexOf(signUp_Email);
         if (userEmail.includes(signUp_Email)) {
             errorMessage.innerHTML = 'Email already exists. Please use a different email or sign in.';
         } else {
@@ -28,7 +27,6 @@ function signUp() {
         document.getElementById('signup-password').value = '';
     }
 }
-
 function signIn(){
     var login_Email = document.getElementById('login-Email').value
     var login_Password = document.getElementById('login-Password').value
@@ -36,14 +34,24 @@ function signIn(){
     var userEmailIndex = userEmail.indexOf(login_Email );
     var loginuserPassword = userPassword.indexOf(login_Password);
     if(userEmailIndex === -1 ){
-        errorMessages.innerHTML = 'Your email is not registered. You will need to register.';
-        
+        errorMessages.innerHTML = 'Your email is not registered. You will need to create account.';
     }
     else if(loginuserPassword === -1 ){
         errorMessages.innerHTML = 'Password is wrong'
     }
-
     else{
        window.location.href = 'Discription.html';
+    }
+}
+function rest() {
+    var restEmail = document.getElementById('restEmail').value;
+    var newPassword = document.getElementById('new-password').value;
+    if (userEmail.includes(restEmail)) {
+            var emailIndex = userEmail.indexOf(restEmail);
+            userPassword[emailIndex] = newPassword;
+            localStorage.setItem('userPassword', JSON.stringify(userPassword));
+            window.location.href = 'Login.html';
+    } else {
+        alert('Email not found');
     }
 }
