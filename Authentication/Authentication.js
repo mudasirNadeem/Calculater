@@ -33,12 +33,16 @@ function signIn(){
     var errorMessages = document.getElementById('errorMessages')
     var userEmailIndex = userEmail.indexOf(login_Email );
     var loginuserPassword = userPassword.indexOf(login_Password);
-    if(userEmailIndex === -1 ){
+     if(login_Password.length <  1 ){
+        errorMessages.innerHTML = 'Enter your Password'
+    }
+   else if(userEmailIndex === -1 ){
         errorMessages.innerHTML = 'Your email is not registered. You will need to create account.';
     }
     else if(loginuserPassword === -1 ){
         errorMessages.innerHTML = 'Password is wrong'
     }
+ 
     else{
        window.location.href = 'Discription.html';
     }
